@@ -2,7 +2,6 @@
 
 #create dict for storing values
 thisdict = {
-  
 }
 
 #function to put key value pair in dict
@@ -20,10 +19,12 @@ def parse_input(input):
   split = input.split(" ")
   return split
   
-#evaluate the length of array and call appropriate function
+#evaluate the array and call appropriate function
 def eval_array(arr):
   length = len(arr)
-  if length == 3 and arr[0] == "put":
+  if arr[0] != "put" or arr[0] != "fetch" or arr[0] != "exit":
+    print("Unknown command. Known commands are: put, fetch, exit")
+  elif length == 3 and arr[0] == "put":
     put_value(arr[1], arr[2])
   elif length == 2 and arr[0] == "fetch":
     fetch_value(arr[1])

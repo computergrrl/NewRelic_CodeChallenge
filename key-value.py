@@ -15,14 +15,14 @@ def fetch_value(key):
 
 #function to parse input to usable data
 def parse_input(input):
-  split = input.split(" ")
+  split = input.split()
   return split
   
 #evaluate the array and call appropriate function
 def eval_array(arr):
   length = len(arr)
   valid_options = ["put", "fetch", "exit"]
-  if arr[0] not in valid_options:
+  if length > 0 and arr[0] not in valid_options:
     print("Unknown command. Known commands are: put, fetch, exit")
   elif length == 3 and arr[0] == "put":
     put_value(arr[1], arr[2])

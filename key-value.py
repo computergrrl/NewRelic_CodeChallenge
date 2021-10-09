@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 
 #create dict for storing values
-thisdict = {
+stored_values = {
 }
 
 #function to put key value pair in dict
 def put_value(key, value):
-  thisdict.update({key: value})
+  stored_values.update({key: value})
   print("ok")
 
 #function to fetch value from dict
 def fetch_value(key):
-  print(thisdict[key]) if key in thisdict else print("Value Not Found")
+  print(stored_values[key]) if key in stored_values else print("Value Not Found")
 
 #function to parse input to usable data
 def parse_input(input):

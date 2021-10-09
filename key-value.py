@@ -11,8 +11,7 @@ def put_value(key, value):
 
 #function to fetch value from dict
 def fetch_value(key):
-  #[on_true] if [expression] else [on_false] 
-  print(thisdict[key]) if thisdict[key] else print("Value Not Found")
+  print(thisdict[key]) if key in thisdict else print("Value Not Found")
 
 #function to parse input to usable data
 def parse_input(input):
@@ -22,14 +21,15 @@ def parse_input(input):
 #evaluate the array and call appropriate function
 def eval_array(arr):
   length = len(arr)
-  if arr[0] != "put" or arr[0] != "fetch" or arr[0] != "exit":
+  valid_options = ["put", "fetch", "exit"]
+  if arr[0] not in valid_options:
     print("Unknown command. Known commands are: put, fetch, exit")
   elif length == 3 and arr[0] == "put":
     put_value(arr[1], arr[2])
   elif length == 2 and arr[0] == "fetch":
     fetch_value(arr[1])
   else:
-    print("Invalid input")
+    print("Invalid syntax")
 
 #prompt user
 user_input = input("> ")

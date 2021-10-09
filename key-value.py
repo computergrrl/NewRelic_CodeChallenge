@@ -12,7 +12,8 @@ def put_value(key, value):
 
 #function to fetch value from dict
 def fetch_value(key):
-  print(thisdict[key])
+  #[on_true] if [expression] else [on_false] 
+  print(thisdict[key]) if thisdict[key] else print("Value Not Found")
 
 #function to parse input to usable data
 def parse_input(input):

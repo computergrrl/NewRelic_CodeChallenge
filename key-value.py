@@ -4,6 +4,18 @@
 stored_values = {
 }
 
+def add(a,b):
+  """
+
+>>> add(1 , 1)
+2
+
+>>> add(2 , 3)
+5
+
+"""
+  return a+b
+
 #function to put key value pair in dict
 def put_value(key, value):
   stored_values.update({key: value})
@@ -17,7 +29,7 @@ def fetch_value(key):
 def parse_input(input):
   split = input.split()
   return split
-  
+
 #evaluate the array and call appropriate function
 def eval_array(arr):
   length = len(arr)
@@ -38,5 +50,5 @@ user_input = input("> ")
 while user_input != "exit":
   eval_array(parse_input(user_input))
   user_input = input("> ")
-  
+ 
 print("Bye!")

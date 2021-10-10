@@ -1,54 +1,46 @@
 #!/usr/bin/env python3
 
-#create dict for storing values
 stored_values = {
 }
 
-def add(a,b):
-  """
-
->>> add(1 , 1)
-2
-
->>> add(2 , 3)
-5
-
-"""
-  return a+b
-
-#function to put key value pair in dict
 def put_value(key, value):
-  stored_values.update({key: value})
-  print("ok")
-
-#function to fetch value from dict
+    """function to put value in stored_values dict"""
+    stored_values.update({key: value})
+    return "ok"
+  
 def fetch_value(key):
-  print(stored_values[key]) if key in stored_values else print("Value Not Found")
+    """function to fetch value from stored_values dict"""
+    if key in stored_values:
+      return stored_values[key] 
+    else:
+      return "Value not found"
 
-#function to parse input to usable data
 def parse_input(input):
-  split = input.split()
-  return split
+    """parse the input from user prompt and return array of strings"""
+    split = input.split()
+    return split
 
-#evaluate the array and call appropriate function
 def eval_array(arr):
-  length = len(arr)
-  valid_options = ["put", "fetch", "exit"]
-  if length > 0 and arr[0] not in valid_options:
-    print("Unknown command. Known commands are: put, fetch, exit")
-  elif length == 3 and arr[0] == "put":
-    put_value(arr[1], arr[2])
-  elif length == 2 and arr[0] == "fetch":
-    fetch_value(arr[1])
-  else:
-    print("Invalid syntax")
+    """evaluate the array and call appropriate function"""
+    length = len(arr)
+    valid_options = ["put", "fetch", "exit"]
+    message = ""
+    if length > 0 and arr[0] not in valid_options:
+      message = "Unknown command. Known commands are: put, fetch, exit"
+    elif length == 3 and arr[0] == "put":
+      message = put_value(arr[1], arr[2])
+    elif length == 2 and arr[0] == "fetch":
+      message = fetch_value(arr[1])
+    else:
+      message = "Invalid syntax"
+    return message
 
-#prompt user
-user_input = input("> ")
+if __name__ == '__main__':
+    user_input = input("> ")
 
-#until user enters "exit" continue to prompt
-while user_input != "exit":
-  eval_array(parse_input(user_input))
-  user_input = input("> ")
- 
-print("Bye!")
+    """until user types in "exit" continue to prompt and call eval_array"""
+    while user_input != "exit":
+      print(eval_array(parse_input(user_input)))
+      user_input = input("> ")
+
+    print("Bye!")

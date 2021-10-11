@@ -26,12 +26,17 @@ class KeyValueTests(unittest.TestCase):
         self.assertEqual(key_value.fetch_value("my_age"), \
         "Value not found")
 
-    def test_error_message_if_too_many_(self):
+    def test_error_message_if_command_not_recognized(self):
         self.assertEqual(key_value.eval_array(["do", "something"]) , \
          "Unknown command. Known commands are: put, fetch, exit")
+    
+    def test_error_message_if_too_many_arguments(self):
+        self.assertNotEqual(key_value.eval_array(["put", "this", \
+            "value", "somewhere"]), "ok")
 
     def test_eval_array_always_returns_string(self):
         self.assertIsInstance(key_value.eval_array(["put"]), str)
+
     
     
 if __name__ == '__main__':

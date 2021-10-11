@@ -24,11 +24,16 @@ the string "Invalid syntax."
 To run the program, simply type `./key-value.py` from the terminal
 
 ### Running the tests
-To run the tests, type `python3 tests.py`
+I used Python's built in unit test framework "unittest" to create the tests, and I also used the coverage tool to test the code coverage. 
+ - To run the tests, type `./tests.py`
+ - To install coverage tool type `pip install -r requirements.txt`
+ - To run coverage tool type `coverage run tests.py`
+ - Then to generate a coverage report type `coverage report`
 
       
 ### Notes:   
-I initially was going to create this program with JavaScript, but then realized after writing some initial pseudocode that I would be better off using a language that had built in methods for interacting with the command line, so I decided to use Python. I will say that this was a challenge to me since I was unfamilar with Python and had to sort of do a crash course on it over the weekend. 
-
+I initially was going to create this program with JavaScript, but then realized after writing some initial pseudocode that I would be better off using a language that had built in methods for interacting with the command line, so I decided to use Python. This was a challenge to me since I was unfamilar with Python and had to do a crash course on it over the weekend. Being unfamiliar with the language presented some obstacles, as I was unfamiliar with all of the ins and outs of PEP 8 - and I got stuck for a bit figuring out which testing library to use. I looked into doctest, Pytest and unittest and in the end (after overcoming some import issues) I decided to use unittest.     
+     
+I realize that I could have written more tests, to get a better percentage of coverage, and also could have broken up the testing into several different classes, but for the scope of this project, and also put a cap to the time spent on this project I decided to stick with the one class and not get to carried away with testing for this challenge.
 
 

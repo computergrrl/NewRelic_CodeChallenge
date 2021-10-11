@@ -38,7 +38,8 @@ def eval_array(arr):
 if __name__ == '__main__':
     user_input = input("> ")
 
-    """until user types in "exit" continue to prompt and call eval_array"""
+    """until user types in "exit" continue 
+    to prompt and call eval_array"""
     while user_input != "exit":
       print(eval_array(parse_input(user_input)))
       user_input = input("> ")
